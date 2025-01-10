@@ -1,0 +1,4 @@
+# Unexpected List Modification Behavior in Elixir Enum.each
+This example demonstrates a common pitfall in Elixir when attempting to modify a list while iterating over it using `Enum.each`.  `Enum.each` is designed for side effects, not for in-place modification of the collection being iterated. The code attempts to remove the element `3` from the list, but it fails to do so because `list = List.delete(list, x)` creates a new list instead of altering the original. This new list is not reflected in the original list used by Enum.each. 
+
+The solution shows how to achieve the desired outcome using `Enum.filter` or `List.delete/2` appropriately.
